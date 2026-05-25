@@ -166,7 +166,7 @@ def segment_customers(X_scaled):
     print("\n  Fraud concentration per segment:")
     for i in range(4):
         mask = (labels == i)
-        seg_fraud = X_scaled[mask, -1]  # Amount_Log is last column
+        seg_fraud = np.asarray(X_scaled)[mask, -1]  # Amount_Log is last column
         print(f"    Segment {i+1}: avg_amount_log = {seg_fraud.mean():.3f}")
 
     return labels, probs, gmm, pca

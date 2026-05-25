@@ -1,0 +1,6 @@
+data/creditcard.csv
+__pycache__/
+*.csv
+*.pyc
+.pytest_cache/
+.vscode/

@@ -1,54 +1,53 @@
 # Customer Segmentation and Fraud Detection
 
-## Overview
-
-This project builds a complete pipeline for analyzing credit card transactions. It groups customers into meaningful segments and flags suspicious transactions. The code follows a clean stage by stage flow so each part can be tested and understood on its own.
+End to end pipeline for credit card fraud detection and customer segmentation
 
 ## Project Structure
-```
-repo_root/
-  src/
-    solution.py       main pipeline code
-  requirements.txt    python dependencies
-  README.md           this file
-```
 
-## Pipeline Stages
+data/           raw dataset and processed files
+src/            main solution code
+  solution.py   complete 5 stage pipeline
+README.md       this file
+requirements.txt
 
-The solution is split into five stages. Each stage is a separate section in the code. You can read or run them one at a time.
+## Stages
 
-* Stage 0: Setup and data loading
-* Stage 1: Data cleaning and preprocessing
-* Stage 2: Customer segmentation using clustering
-* Stage 3: Fraud detection with Isolation Forest
-* Stage 4: Final report and model summary
+Stage 0: Data Loading and Exploration
+  Load dataset, check class balance, inspect columns
+
+Stage 1: Data Preprocessing
+  Handle class imbalance, create time features, scale features
+
+Stage 2: Customer Segmentation
+  GMM clustering to identify customer groups
+
+Stage 3: Fraud Detection
+  Multiple models: Isolation Forest, Random Forest, Logistic Regression, Local Outlier Factor
+
+Stage 4: Final Report and Summary
+  Model comparison and segment level fraud statistics
 
 ## How to Run
 
-1. Open this repo in GitHub Codespace or clone it locally
-2. Install the dependencies listed in requirements.txt
-3. Place the creditcard.csv file in the repo root folder
-4. Run the following command:
-
-```bash
-python src/solution.py
-```
-5. The script will print results for each stage in the terminal
+1. Clone or open this repo
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Make sure creditcard.csv is in the src folder
+4. Run:
+   python src/solution.py
+5. Results print to terminal for each stage
 
 ## Requirements
 
-Install packages from requirements.txt:
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+scipy
+kaggle
+joblib
 
-```bash
-pip install -r requirements.txt
-```
+## Dataset
 
-## What You Get
-
-After running the script you will see:
-
-* Basic data info and null counts
-* A summary of preprocessing steps applied
-* Customer segments with cluster centers
-* Fraud flagging results with sample transactions
-* A final summary with key numbers
+Kaggle Credit Card Fraud Detection dataset
